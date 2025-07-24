@@ -13,6 +13,7 @@ body {
   width: 90%;
   max-width: 500px; /* más estrecho, estilo vertical */
   height: 90vh;
+  max-height: 90vh;
   padding: 10px;
   border-radius: 30px;
   background-color: #ffffff;
