@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+  background: linear-gradient(180deg, #d6f5f3, #d6dadb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#cuento-container {
+  width: 90%;
+  max-width: 500px; /* más estrecho, estilo vertical */
+  height: 90vh;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  border: solid 6px #24beaf;
+}
+
+.pagina {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.pagina.visible {
+  display: flex;
+}
+
+/* Imagen adaptada a formato vertical */
+.imagen-calma {
+  width: auto;
+  height: 55vh;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* Texto */
+.texto {
+  font-size: 1rem;
+  color: #2e2e2e;
+  margin-bottom: 20px;
+}
+
+/* Botón */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.boton {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #37bbae;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #3dd6c2;
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+.slide-in-left {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.5s forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s forwards;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+ /* Botón musica */
+.boton-musica {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.boton-musica.reproduciendo {
+  color: #40e0d0;
+}
+/* Ocultar botones en móviles */
+@media (max-width: 768px) {
+  .boton {
+    display: none;
+  }
+
+  .boton-musica {
+    top:2.9em;
+  }
+
+  .pagina{
+    margin-top: 3.5em;
+  }
+}
+
+
+
